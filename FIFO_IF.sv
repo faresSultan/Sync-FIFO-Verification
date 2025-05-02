@@ -9,18 +9,18 @@ interface FIFO_IF(input bit clk);
     logic full, empty, almostfull, almostempty, underflow;
 
     modport DUT (
-    input clk,rst_n,wr_en,rd_en,data_in,
-    output data_out, wr_ack, overflow, underflow, full, almostfull, empty, almostempty
+        input clk,rst_n,wr_en,rd_en,data_in,
+        output data_out, wr_ack, overflow, underflow, full, almostfull, empty, almostempty
     );
 
     modport TEST (
-    input clk, data_out, wr_ack, overflow, underflow, full, almostfull, empty, almostempty,
-    output rst_n,wr_en,rd_en,data_in
+        input clk, data_out, wr_ack, overflow, underflow, full, almostfull, empty, almostempty,
+        output rst_n,wr_en,rd_en,data_in
     );
 
     modport Monitor (
-    input clk, data_out, wr_ack, overflow, underflow, full, almostfull, 
-    empty, almostempty,rst_n,wr_en,rd_en,data_in
+        input clk, data_out, wr_ack, overflow, underflow, full, almostfull, 
+        empty, almostempty,rst_n,wr_en,rd_en,data_in
     );
 
 endinterface
