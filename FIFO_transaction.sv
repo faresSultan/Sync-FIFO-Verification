@@ -26,7 +26,6 @@ package FIFO_transaction_pkg;
             wr_en dist{1:=WR_EN_ON_DIST, 0:=100-WR_EN_ON_DIST};
             rd_en dist{1:=RD_EN_ON_DIST, 0:=100-RD_EN_ON_DIST};
         }
-        
     endclass
 
     

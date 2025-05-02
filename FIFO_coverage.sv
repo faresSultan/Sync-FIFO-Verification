@@ -28,7 +28,6 @@ package FIFO_coverage_pkg;
             F_cvg_txn = new F_txn;
             FIFO_coverage.sample();
         endfunction
-
         
     endclass
 endpackage

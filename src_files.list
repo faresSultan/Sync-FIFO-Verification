@@ -1,3 +1,5 @@
 FIFO_IF.sv
 FIFO_transaction.sv
+FIFO_coverage.sv
+FIFO_scoreboard.sv
 FIFO.sv
