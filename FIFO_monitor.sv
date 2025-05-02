@@ -1,3 +1,8 @@
+
+import FIFO_transaction_pkg::*;
+import FIFO_scoreboard_pkg::*;
+import FIFO_coverage_pkg::*;
+
 module FIFO_monitor( FIFO_IF IF);
 
     FIFO_transaction txn;
