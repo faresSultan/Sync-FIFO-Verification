@@ -1,9 +1,8 @@
 package FIFO_transaction_pkg;
 
-
+    import shared_pkg::*;
     class FIFO_transaction;
         
-        parameter FIFO_WIDTH = 16;   // FIFO_IF.FIFO_WIDTH ??
         
         rand bit [FIFO_WIDTH-1:0] data_in;
         rand bit rst_n, wr_en, rd_en;
