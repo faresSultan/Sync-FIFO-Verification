@@ -43,6 +43,19 @@ package FIFO_scoreboard_pkg;
                         underflow_ref <= 1;
                     end
                 end
+
+                case (FIFO_ref.size())
+                    0 : empty_ref = 1; 
+                    1 : almostempty_ref = 1;
+                    FIFO_DEPTH : full_ref = 1;
+                    (FIFO_DEPTH-1) : almostfull_ref = 1;
+                    default: begin
+                        empty_ref = 0;
+                        almostempty_ref = 0;
+                        full_ref = 0;
+                        almostfull_ref = 0;
+                    end
+                endcase
                 
             endfunction        
         endclass
