@@ -16,8 +16,8 @@ module FIFO_monitor( FIFO_IF.Monitor IF);
         cvg = new;
 
         forever begin
-            @(negedge IF.clk);
-
+            wait(finished_driving.triggered);
+            
             txn.rst_n = IF.rst_n;
             txn.wr_en = IF.wr_en;
             txn.rd_en = IF.rd_en;
