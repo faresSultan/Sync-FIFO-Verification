@@ -4,6 +4,8 @@ module top();
     always #1 clk = ~clk;
 
     FIFO_IF fifo_if (clk);
-    
-    
+
+    FIFO DUT (fifo_if);
+    TestBench tb (fifo_if);
+    FIFO_monitor monitor (fifo_if); 
 endmodule
