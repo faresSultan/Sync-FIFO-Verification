@@ -5,9 +5,6 @@ package FIFO_coverage_pkg;
 
         FIFO_transaction F_cvg_txn;
 
-        function void new();
-            FIFO_coverage = new;
-        endfunction
 
         covergroup FIFO_coverage;
             
@@ -24,6 +21,10 @@ package FIFO_coverage_pkg;
 
         endgroup
 
+        function new();
+            FIFO_coverage = new;
+        endfunction
+        
         function void sample_data(FIFO_transaction F_txn);
             F_cvg_txn = new F_txn;
             FIFO_coverage.sample();

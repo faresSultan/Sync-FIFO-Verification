@@ -32,12 +32,12 @@ package FIFO_scoreboard_pkg;
                 empty_ref = 1;
             end
             else begin  // Reset is not asserted
-                if (F_txn.wt_en && !F_txn.full) begin // normal write operation
-                    FIFO_ref.push_back(data_in);
+                if (F_txn.wr_en && !F_txn.full) begin // normal write operation
+                    FIFO_ref.push_back(F_txn.data_in);
                     wr_ack_ref = 1;
                     overflow_ref = 0;       
                 end 
-                else if(F_txn.wt_en && F_txn.full) begin // write operation while fifo is full
+                else if(F_txn.wr_en && F_txn.full) begin // write operation while fifo is full
                     overflow_ref = 1;
                     wr_ack_ref = 0; 
                 end

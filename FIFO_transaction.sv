@@ -13,7 +13,7 @@ package FIFO_transaction_pkg;
 
         int RD_EN_ON_DIST, WR_EN_ON_DIST;
 
-        function void new(int RD_EN_ON_DIST = 30, int WR_EN_ON_DIST = 70);
+        function  new(int RD_EN_ON_DIST = 30, int WR_EN_ON_DIST = 70);
             
             this.RD_EN_ON_DIST  = RD_EN_ON_DIST;
             this.WR_EN_ON_DIST  = WR_EN_ON_DIST;
