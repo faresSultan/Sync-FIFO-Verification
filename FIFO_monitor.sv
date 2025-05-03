@@ -15,9 +15,10 @@ module FIFO_monitor( FIFO_IF.Monitor IF);
         sb = new;
         cvg = new;
 
+
         forever begin
-            wait(finished_driving.triggered);
-            
+            @(finished_driving);
+            @(negedge IF.clk);
             txn.rst_n = IF.rst_n;
             txn.wr_en = IF.wr_en;
             txn.rd_en = IF.rd_en;
@@ -30,6 +31,8 @@ module FIFO_monitor( FIFO_IF.Monitor IF);
             txn.almostempty = IF.almostempty;
             txn.full = IF.full;
             txn.almostfull = IF.almostfull;
+            -> finished_recording;
+            
 
             fork
                 begin

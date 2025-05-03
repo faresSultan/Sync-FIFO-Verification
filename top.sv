@@ -1,7 +1,7 @@
 module top();
     bit clk = 0;
 
-    always #1 clk = ~clk;
+    always #2 clk = ~clk;
 
     FIFO_IF fifo_if (clk);
 
