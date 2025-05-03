@@ -3,7 +3,6 @@ package FIFO_transaction_pkg;
     import shared_pkg::*;
     class FIFO_transaction;
         
-        
         rand bit [FIFO_WIDTH-1:0] data_in;
         rand bit rst_n, wr_en, rd_en;
         
@@ -27,5 +26,4 @@ package FIFO_transaction_pkg;
         }
     endclass
 
-    
 endpackage

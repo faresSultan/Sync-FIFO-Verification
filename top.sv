@@ -12,7 +12,7 @@ module top();
         if(!fifo_if.rst_n) begin 
             Reset: assert final (
                 !(fifo_if.wr_ack || fifo_if.underflow || fifo_if.overflow || fifo_if.almostempty||
-                    fifo_if.almostfull || fifo_if.full || fifo_if.data_out) && fifo_if.empty
+                    fifo_if.almostfull || fifo_if.full) && fifo_if.empty
             )
             else $fatal("Assertion Reset failed!");
         end

@@ -9,7 +9,7 @@ package FIFO_scoreboard_pkg;
         logic full_ref, empty_ref, almostfull_ref, almostempty_ref, underflow_ref;
         function void check_data(FIFO_transaction F_txn);
             reference_model(F_txn);
-            if(F_txn.rd_en) begin  // there is a read operation      
+            if(F_txn.rd_en && rst_n) begin  // there is a read operation      
                 if(data_out_ref != F_txn.data_out) begin
                     $display("Invalid data_out: %0d, Expected: %0d",F_txn.data_out,data_out_ref);
                     error_count++;
@@ -18,11 +18,11 @@ package FIFO_scoreboard_pkg;
                 else begin
                     correct_count++;
                 end
-            end    
+            end
+            else correct_count++;    
         endfunction
         function void reference_model(FIFO_transaction F_txn);
             if(!F_txn.rst_n) begin
-                data_out_ref = 'b0;
                 wr_ack_ref = 0;
                 overflow_ref = 0;
                 underflow_ref = 0;

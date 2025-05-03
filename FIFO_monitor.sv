@@ -33,7 +33,6 @@ module FIFO_monitor( FIFO_IF.Monitor IF);
             txn.almostfull = IF.almostfull;
             -> finished_recording;
             
-
             fork
                 begin
                     cvg.sample_data(txn);    
