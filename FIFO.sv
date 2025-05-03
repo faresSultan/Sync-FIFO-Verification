@@ -5,7 +5,7 @@
 // Description: FIFO Design 
 // 
 ////////////////////////////////////////////////////////////////////////////////
-module FIFO(FIFO_IF fifo_if);
+module FIFO(FIFO_IF.DUT fifo_if);
 
  
 localparam max_fifo_addr = $clog2(fifo_if.FIFO_DEPTH);

@@ -4,7 +4,7 @@ import FIFO_scoreboard_pkg::*;
 import FIFO_coverage_pkg::*;
 import shared_pkg::*;
 
-module FIFO_monitor( FIFO_IF IF);
+module FIFO_monitor( FIFO_IF.Monitor IF);
 
     FIFO_transaction txn;
     FIFO_scoreboard sb;
