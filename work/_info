@@ -37,6 +37,98 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.1 2021.01, Jan 19 2021
 13
 !s112 1.1
@@ -44,349 +136,368 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dD:/Digital IC design/Digital verification/Class Work/Digital-verification-using-SV-and-UVM/Session 6/Assignment
+dD:/Digital IC design/Digital verification/Class Work/Digital-verification-using-SV-and-UVM/Session 6/Assignment
 T_opt
-!s110 1746285890
-V?i4VSNML2`b4k3=h]@MVn3
+!s110 1746384181
+VHGj@DDb[h1A[@B9LVWUU80
 04 3 4 work top fast 0
-=1-ccf9e498c556-68163542-9a-5a14
+=1-ccf9e498c556-6817b535-b8-e64
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.1;73
-R1
 vFIFO
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z4 !s110 1746286254
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1746384179
 !i10b 1
-!s100 ;:_jeJ45L4>7Q:?Xfh:1X3
-Ik<_FO01CRO2z[Dh^zD@hM2
-Z5 !s105 FIFO_monitor_sv_unit
+!s100 baHjRZe?JbkN0;6_]DO>53
+I6hmb[4VgAbE8[7NRRl]G40
 S1
-Z6 dD:/Digital IC design/Digital verification/project-syncFIFO/Sync-FIFO-Verification
-w1746271422
+Z4 dD:/Digital IC design/Digital verification/project-syncFIFO/Sync-FIFO-Verification
+w1746342458
 8FIFO.sv
 FFIFO.sv
-!i122 64
-L0 8 195
-Z7 VDg1SIo80bB@j0V0VzS_@n1
-Z8 OL;L;2021.1;73
+!i122 173
+L0 8 194
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z9 !s108 1746286254.000000
-Z10 !s107 top.sv|FIFO.sv|FIFO_tb.sv|FIFO_monitor.sv|FIFO_coverage.sv|FIFO_scoreboard.sv|FIFO_transaction.sv|FIFO_IF.sv|shared_pkg.sv|
-Z11 !s90 -reportprogress|300|-f|src_files.list|+cover|-covercells|
+Z7 !s108 1746384179.000000
+Z8 !s107 top.sv|FIFO.sv|FIFO_tb.sv|FIFO_monitor.sv|FIFO_coverage.sv|FIFO_scoreboard.sv|FIFO_transaction.sv|FIFO_IF.sv|shared_pkg.sv|
+Z9 !s90 -reportprogress|300|-f|src_files.list|+define+SIM|+cover|-covercells|
 !i113 0
-Z12 !s102 +cover -covercells
-Z13 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+Z10 !s102 +cover -covercells
+Z11 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 !s92 +define+SIM +cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
 n@f@i@f@o
 XFIFO_coverage_pkg
+R2
+Z13 DXx4 work 10 shared_pkg 0 22 jiETmU088jIaQmhNf4cOS0
+Z14 DXx4 work 20 FIFO_transaction_pkg 0 22 =92UI8Bn6Q;^MPNHAS9eJ0
 R3
-Z14 DXx4 work 10 shared_pkg 0 22 9]g<OZeNZjL98zj1jm@<d1
-Z15 DXx4 work 20 FIFO_transaction_pkg 0 22 bnU1h859fPW^d15N5:k1Z2
-R4
 !i10b 1
 !s100 ]CobJYU@KYEhMY]0B5@Wd2
-I1nl<oz5Ujg;1[WBOh9f`b0
+IcM64bmA_egYND1S_bX44P2
 S1
-R6
+R4
 w1746258788
 8FIFO_coverage.sv
 FFIFO_coverage.sv
-!i122 64
-Z16 L0 1 0
-V1nl<oz5Ujg;1[WBOh9f`b0
-R8
+!i122 173
+Z15 L0 1 0
+VcM64bmA_egYND1S_bX44P2
+R6
 r1
 !s85 0
 31
+R7
+R8
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@f@i@f@o_coverage_pkg
 YFIFO_IF
+R2
+R13
+DXx4 work 15 FIFO_IF_sv_unit 0 22 ]cO8c=9U>k[j28c@CDQE`3
 R3
-R14
-DXx4 work 15 FIFO_IF_sv_unit 0 22 @:]EYBnJRkj6f4`?ZWZzW1
-R4
-R7
+R5
 r1
 !s85 0
 !i10b 1
 !s100 f_c3DKY^@Hgi<Sec4olnP2
-I192DmKGLXFzgVBgY<:gmA2
+ICDN3_z64m>JX048S3dodW2
 !s105 FIFO_IF_sv_unit
 S1
-R6
-Z17 w1746271480
-Z18 8FIFO_IF.sv
-Z19 FFIFO_IF.sv
-!i122 64
+R4
+Z16 w1746271480
+Z17 8FIFO_IF.sv
+Z18 FFIFO_IF.sv
+!i122 173
 L0 3 0
-R8
+R6
 31
+R7
+R8
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@f@i@f@o_@i@f
 XFIFO_IF_sv_unit
+R2
+R13
 R3
-R14
-R4
-V@:]EYBnJRkj6f4`?ZWZzW1
+V]cO8c=9U>k[j28c@CDQE`3
 r1
 !s85 0
 !i10b 1
 !s100 JU1lRoM=BaN8`Cc:j00zA1
-I@:]EYBnJRkj6f4`?ZWZzW1
+I]cO8c=9U>k[j28c@CDQE`3
 !i103 1
 S1
-R6
+R4
+R16
 R17
 R18
-R19
-!i122 64
-Z20 L0 2 0
-R8
-31
-R9
-R10
-R11
-!i113 0
-R12
-R13
-R2
-n@f@i@f@o_@i@f_sv_unit
-vFIFO_monitor
-R3
-R4
-!i10b 1
-!s100 iSI5JS8o7k?MeL_T6FLW72
-IOO2VTIOBCIUMW9DclK`<k0
-R5
-S1
+!i122 173
+Z19 L0 2 0
 R6
-w1746285930
-Z21 8FIFO_monitor.sv
-Z22 FFIFO_monitor.sv
-!i122 64
-L0 7 48
+31
 R7
 R8
-r1
-!s85 0
-31
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
+R1
+n@f@i@f@o_@i@f_sv_unit
+vFIFO_monitor
 R2
+R2
+R13
+R14
+Z20 DXx4 work 19 FIFO_scoreboard_pkg 0 22 6mB:41W@>7Hin;8>2Iz;E0
+Z21 DXx4 work 17 FIFO_coverage_pkg 0 22 cM64bmA_egYND1S_bX44P2
+DXx4 work 20 FIFO_monitor_sv_unit 0 22 6mR^ZAMK8Vk@;ZeE=i9g90
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 ;cA2M9j3g6L0gZjmEb3WF0
+Ige70o1noiihYG_D[E24Ck0
+!s105 FIFO_monitor_sv_unit
+S1
+R4
+Z22 w1746381270
+Z23 8FIFO_monitor.sv
+Z24 FFIFO_monitor.sv
+!i122 173
+L0 7 53
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
 n@f@i@f@o_monitor
 XFIFO_monitor_sv_unit
-R3
-R3
+R2
+R2
+R13
 R14
-R15
-DXx4 work 19 FIFO_scoreboard_pkg 0 22 9Hnm:BLLYKI];JKn6Ne710
-DXx4 work 17 FIFO_coverage_pkg 0 22 1nl<oz5Ujg;1[WBOh9f`b0
-Z23 !s110 1746285885
-VT@MIC0:T=15aYI5mATG[o3
+R20
+R21
+R3
+V6mR^ZAMK8Vk@;ZeE=i9g90
 r1
 !s85 0
 !i10b 1
-!s100 zhCc_6nH`N`Cn3WH3dz^A3
-IT@MIC0:T=15aYI5mATG[o3
+!s100 bNXnkRoO0TB<OTI3JY0d>0
+I6mR^ZAMK8Vk@;ZeE=i9g90
 !i103 1
 S1
-R6
-w1746279151
-R21
+R4
 R22
-!i122 63
-R20
-R8
+R23
+R24
+!i122 173
+R19
+R6
 31
-Z24 !s108 1746285885.000000
+R7
+R8
+R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@f@i@f@o_monitor_sv_unit
 XFIFO_scoreboard_pkg
-R3
+R2
+R13
 R14
-R15
-R23
+R3
 !i10b 1
-!s100 HCEOdWHo=RlGLXSN]Y=DR1
-I9Hnm:BLLYKI];JKn6Ne710
+!s100 FVAokUl<J`YV3g@?WaO^Y3
+I6mB:41W@>7Hin;8>2Iz;E0
 S1
-R6
-w1746258331
+R4
+w1746384149
 8FIFO_scoreboard.sv
 FFIFO_scoreboard.sv
-!i122 63
-R16
-V9Hnm:BLLYKI];JKn6Ne710
-R8
+!i122 173
+R15
+V6mB:41W@>7Hin;8>2Iz;E0
+R6
 r1
 !s85 0
 31
-R24
+R7
+R8
+R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@f@i@f@o_scoreboard_pkg
 XFIFO_tb_sv_unit
-R3
-R3
+R2
+R2
+R13
 R14
-R15
-R23
-VFla7ABbjfY3AV0<bD[2Zz3
+R3
+VAEjP4_IBI_>MkhRHhed^40
 r1
 !s85 0
 !i10b 1
-!s100 znemf>KVGVghUoV]]7AlQ2
-IFla7ABbjfY3AV0<bD[2Zz3
+!s100 Y3Ii3<i>G7inndbPEKY3=2
+IAEjP4_IBI_>MkhRHhed^40
 !i103 1
 S1
+R4
+Z25 w1746375357
+Z26 8FIFO_tb.sv
+Z27 FFIFO_tb.sv
+!i122 173
+R19
 R6
-w1746285874
-Z25 8FIFO_tb.sv
-Z26 FFIFO_tb.sv
-!i122 63
-R20
-R8
 31
-R24
+R7
+R8
+R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@f@i@f@o_tb_sv_unit
 XFIFO_transaction_pkg
+R2
+R13
 R3
-R14
-R4
 !i10b 1
-!s100 >8g2G7OL_X7GzI`V7SM4F2
-IbnU1h859fPW^d15N5:k1Z2
+!s100 [6452aJT:KA[Q3TQQ0hlX2
+I=92UI8Bn6Q;^MPNHAS9eJ0
 S1
-R6
-w1746285363
+R4
+w1746379210
 8FIFO_transaction.sv
 FFIFO_transaction.sv
-!i122 64
-R16
-VbnU1h859fPW^d15N5:k1Z2
-R8
+!i122 173
+R15
+V=92UI8Bn6Q;^MPNHAS9eJ0
+R6
 r1
 !s85 0
 31
+R7
+R8
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@f@i@f@o_transaction_pkg
 Xshared_pkg
+R2
 R3
-R4
 !i10b 1
 !s100 aHbi5oh>fiQ;ahO:BE>NE2
-I9]g<OZeNZjL98zj1jm@<d1
+IjiETmU088jIaQmhNf4cOS0
 S1
-R6
+R4
 w1746276873
 8shared_pkg.sv
 Fshared_pkg.sv
-!i122 64
-R16
-V9]g<OZeNZjL98zj1jm@<d1
-R8
+!i122 173
+R15
+VjiETmU088jIaQmhNf4cOS0
+R6
 r1
 !s85 0
 31
+R7
+R8
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 vTestBench
+R2
+R2
+R13
+R14
+DXx4 work 15 FIFO_tb_sv_unit 0 22 AEjP4_IBI_>MkhRHhed^40
 R3
-R4
-!i10b 1
-!s100 L4SF8YWSbPSej9bIX<jbg3
-IkN=I?hcCT>Ko20hWc8>mA1
 R5
+r1
+!s85 0
+!i10b 1
+!s100 b^NEMLbaY5QR0Z@zKg1eC0
+Iz@j39hQeOh4g=]gLKmD4[0
+!s105 FIFO_tb_sv_unit
 S1
-R6
-w1746285918
+R4
 R25
 R26
-!i122 64
-L0 4 34
+R27
+!i122 173
+L0 4 32
+R6
+31
 R7
 R8
-r1
-!s85 0
-31
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1
 n@test@bench
 vtop
+R2
 R3
-R4
 !i10b 1
-!s100 hzm0V2diXGlzAgTHJiKDb2
-I`aRD5`Gnfn?FTabI=INlm1
-R5
+!s100 0P[FDXNS^4GW=1mJeJc500
+II2Se74afma?VX^;Nfiz]i3
 S1
-R6
-w1746286165
+R4
+w1746335435
 8top.sv
 Ftop.sv
-!i122 64
+!i122 173
 L0 1 20
-R7
-R8
+R5
+R6
 r1
 !s85 0
 31
+R7
+R8
 R9
+!i113 0
 R10
 R11
-!i113 0
 R12
-R13
-R2
+R1

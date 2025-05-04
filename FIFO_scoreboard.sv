@@ -5,63 +5,57 @@ package FIFO_scoreboard_pkg;
     class FIFO_scoreboard;
         logic [FIFO_WIDTH-1:0] data_out_ref;
         logic [FIFO_WIDTH-1 : 0] FIFO_ref[$];
-        logic wr_ack_ref, overflow_ref;
-        logic full_ref, empty_ref, almostfull_ref, almostempty_ref, underflow_ref;
+        bit fifo_current_size = 0;
+
         function void check_data(FIFO_transaction F_txn);
             reference_model(F_txn);
             if(F_txn.rd_en && F_txn.rst_n) begin  // there is a read operation      
-                if(data_out_ref != F_txn.data_out) begin
-                    $display("Invalid data_out: %0d, Expected: %0d",F_txn.data_out,data_out_ref);
+                if(!F_txn.empty && (data_out_ref != F_txn.data_out)) begin
+                    $fatal("Invalid data_out: %0h, Expected: %0h",F_txn.data_out,data_out_ref);
                     error_count++;
-                    $stop;
+                    //$stop;
                 end
                 else begin
                     correct_count++;
                 end
             end
-            else correct_count++;    
+   //         else correct_count++;    
         endfunction
         function void reference_model(FIFO_transaction F_txn);
             if(!F_txn.rst_n) begin
-                wr_ack_ref = 0;
-                overflow_ref = 0;
-                underflow_ref = 0;
-                full_ref = 0;
-                almostfull_ref = 0;
-                almostempty_ref = 0;
-                empty_ref = 1;
+                FIFO_ref.delete();
+                fifo_current_size = 0;           
             end
-            else begin  // Reset is not asserted
-                if (F_txn.wr_en && !F_txn.full) begin // normal write operation
-                    FIFO_ref.push_back(F_txn.data_in);
-                    wr_ack_ref = 1;
-                    overflow_ref = 0;       
-                end 
-                else if(F_txn.wr_en && F_txn.full) begin // write operation while fifo is full
-                    overflow_ref = 1;
-                    wr_ack_ref = 0; 
+
+            else begin
+
+                if ({F_txn.wr_en,F_txn.rd_en} == 2'b11) begin
+                    if (FIFO_ref.size() == 0) begin // fifo empty, only write
+                        FIFO_ref.push_back(F_txn.data_in);
+                    end
+                    else if (FIFO_ref.size() == FIFO_DEPTH) begin // fifo full, only read
+                        data_out_ref = FIFO_ref.pop_front();
+                    end
+                    else begin // read & write, count still the same
+                        data_out_ref = FIFO_ref.pop_front();
+                        FIFO_ref.push_back(F_txn.data_in);
+                    end
                 end
-                if (F_txn.rd_en && !F_txn.empty) begin // normal read operation
-                    data_out_ref = FIFO_ref.pop_front();
-                    underflow_ref = 0;       
-                end 
-                else if(F_txn.rd_en && F_txn.empty) begin // read operation while fifo is empty
-                    underflow_ref = 1;
+
+                else if ({F_txn.wr_en,F_txn.rd_en} == 2'b01) begin
+                    if (FIFO_ref.size() > 0) begin
+                        data_out_ref = FIFO_ref.pop_front();
+                    end
                 end
+
+                else if ({F_txn.wr_en,F_txn.rd_en} == 2'b10) begin
+                    if (FIFO_ref.size() < FIFO_DEPTH) begin
+                        FIFO_ref.push_back(F_txn.data_in);
+                    end
+                end
+                
+            //    fifo_current_size = FIFO_ref.size();                
             end
-            case (FIFO_ref.size())
-                0 : empty_ref = 1; 
-                1 : almostempty_ref = 1;
-                FIFO_DEPTH : full_ref = 1;
-                (FIFO_DEPTH-1) : almostfull_ref = 1;
-                default: begin
-                    empty_ref = 0;
-                    almostempty_ref = 0;
-                    full_ref = 0;
-                    almostfull_ref = 0;
-                end
-            endcase
-            
         endfunction        
     endclass
 endpackage

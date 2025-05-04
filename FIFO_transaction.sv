@@ -5,6 +5,9 @@ package FIFO_transaction_pkg;
         
         rand bit [FIFO_WIDTH-1:0] data_in;
         rand bit rst_n, wr_en, rd_en;
+
+        bit [FIFO_WIDTH-1:0] new_data_in;
+        bit new_rst_n, new_wr_en, new_rd_en;
         
         logic [FIFO_WIDTH-1:0] data_out;
         logic wr_ack, overflow;
