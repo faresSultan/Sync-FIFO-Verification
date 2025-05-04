@@ -19,7 +19,7 @@ package FIFO_scoreboard_pkg;
                     correct_count++;
                 end
             end
-   //         else correct_count++;    
+            else correct_count++;    
         endfunction
         function void reference_model(FIFO_transaction F_txn);
             if(!F_txn.rst_n) begin
@@ -53,8 +53,7 @@ package FIFO_scoreboard_pkg;
                         FIFO_ref.push_back(F_txn.data_in);
                     end
                 end
-                
-            //    fifo_current_size = FIFO_ref.size();                
+               
             end
         endfunction        
     endclass
