@@ -1,0 +1,542 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Digital IC design/Digital verification/Class Work/Digital-verification-using-SV-and-UVM/Session 6/Assignment
+T_opt
+!s110 1746391422
+V@jmVKRUI8MgQA1?FN^I1E1
+Z2 04 3 4 work top fast 0
+=1-ccf9e498c556-6817d17e-bb-6818
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1746392001
+VAk1SlnGWF3;j<Go]MJlGd3
+R2
+=1-ccf9e498c556-6817d3c1-17-5f38
+R3
+R4
+R5
+n@_opt1
+R6
+vFIFO
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1746392000
+!i10b 1
+!s100 ffQk>:?SG@DaB?Coo_ln_3
+Ib]aGo2mV<lJno4k1L6<`71
+S1
+Z9 dD:/Digital IC design/Digital verification/project-syncFIFO/Sync-FIFO-Verification/Using_SV_testbench
+w1746390363
+8FIFO.sv
+FFIFO.sv
+!i122 204
+L0 8 197
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z12 !s108 1746392000.000000
+Z13 !s107 top.sv|FIFO.sv|FIFO_tb.sv|FIFO_monitor.sv|FIFO_coverage.sv|FIFO_scoreboard.sv|FIFO_transaction.sv|FIFO_IF.sv|shared_pkg.sv|
+Z14 !s90 -reportprogress|300|-f|src_files.list|+define+SIM|+cover|-covercells|
+!i113 0
+Z15 !s102 +cover -covercells
+Z16 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 !s92 +define+SIM +cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+n@f@i@f@o
+XFIFO_coverage_pkg
+R7
+Z18 DXx4 work 10 shared_pkg 0 22 jiETmU088jIaQmhNf4cOS0
+Z19 DXx4 work 20 FIFO_transaction_pkg 0 22 =92UI8Bn6Q;^MPNHAS9eJ0
+R8
+!i10b 1
+!s100 L>WBkQO5^aaKM2Dz?E;:W0
+IEl5<TZ0<Pj`l2M@8M[M]W3
+S1
+R9
+w1746389579
+8FIFO_coverage.sv
+FFIFO_coverage.sv
+!i122 204
+Z20 L0 1 0
+VEl5<TZ0<Pj`l2M@8M[M]W3
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_coverage_pkg
+YFIFO_IF
+R7
+R18
+DXx4 work 15 FIFO_IF_sv_unit 0 22 ]cO8c=9U>k[j28c@CDQE`3
+R8
+R10
+r1
+!s85 0
+!i10b 1
+!s100 f_c3DKY^@Hgi<Sec4olnP2
+ICDN3_z64m>JX048S3dodW2
+!s105 FIFO_IF_sv_unit
+S1
+R9
+Z21 w1746271480
+Z22 8FIFO_IF.sv
+Z23 FFIFO_IF.sv
+!i122 204
+L0 3 0
+R11
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_@i@f
+XFIFO_IF_sv_unit
+R7
+R18
+R8
+V]cO8c=9U>k[j28c@CDQE`3
+r1
+!s85 0
+!i10b 1
+!s100 JU1lRoM=BaN8`Cc:j00zA1
+I]cO8c=9U>k[j28c@CDQE`3
+!i103 1
+S1
+R9
+R21
+R22
+R23
+!i122 204
+Z24 L0 2 0
+R11
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_@i@f_sv_unit
+vFIFO_monitor
+R7
+R7
+R18
+R19
+Z25 DXx4 work 19 FIFO_scoreboard_pkg 0 22 LhP;leboDPJGnAO?=?<el0
+Z26 DXx4 work 17 FIFO_coverage_pkg 0 22 El5<TZ0<Pj`l2M@8M[M]W3
+DXx4 work 20 FIFO_monitor_sv_unit 0 22 6mR^ZAMK8Vk@;ZeE=i9g90
+R8
+R10
+r1
+!s85 0
+!i10b 1
+!s100 ;cA2M9j3g6L0gZjmEb3WF0
+Ige70o1noiihYG_D[E24Ck0
+!s105 FIFO_monitor_sv_unit
+S1
+R9
+Z27 w1746381270
+Z28 8FIFO_monitor.sv
+Z29 FFIFO_monitor.sv
+!i122 204
+L0 7 53
+R11
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_monitor
+XFIFO_monitor_sv_unit
+R7
+R7
+R18
+R19
+R25
+R26
+R8
+V6mR^ZAMK8Vk@;ZeE=i9g90
+r1
+!s85 0
+!i10b 1
+!s100 bNXnkRoO0TB<OTI3JY0d>0
+I6mR^ZAMK8Vk@;ZeE=i9g90
+!i103 1
+S1
+R9
+R27
+R28
+R29
+!i122 204
+R24
+R11
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_monitor_sv_unit
+XFIFO_scoreboard_pkg
+R7
+R18
+R19
+R8
+!i10b 1
+!s100 O8TAhYHbK2]:ozeU6_C^Z1
+ILhP;leboDPJGnAO?=?<el0
+S1
+R9
+w1746385145
+8FIFO_scoreboard.sv
+FFIFO_scoreboard.sv
+!i122 204
+R20
+VLhP;leboDPJGnAO?=?<el0
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_scoreboard_pkg
+XFIFO_tb_sv_unit
+R7
+R7
+R18
+R19
+R8
+VAEjP4_IBI_>MkhRHhed^40
+r1
+!s85 0
+!i10b 1
+!s100 Y3Ii3<i>G7inndbPEKY3=2
+IAEjP4_IBI_>MkhRHhed^40
+!i103 1
+S1
+R9
+Z30 w1746389656
+Z31 8FIFO_tb.sv
+Z32 FFIFO_tb.sv
+!i122 204
+R24
+R11
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_tb_sv_unit
+XFIFO_transaction_pkg
+R7
+R18
+R8
+!i10b 1
+!s100 [6452aJT:KA[Q3TQQ0hlX2
+I=92UI8Bn6Q;^MPNHAS9eJ0
+S1
+R9
+w1746379210
+8FIFO_transaction.sv
+FFIFO_transaction.sv
+!i122 204
+R20
+V=92UI8Bn6Q;^MPNHAS9eJ0
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@f@i@f@o_transaction_pkg
+Xshared_pkg
+R7
+R8
+!i10b 1
+!s100 aHbi5oh>fiQ;ahO:BE>NE2
+IjiETmU088jIaQmhNf4cOS0
+S1
+R9
+w1746276873
+8shared_pkg.sv
+Fshared_pkg.sv
+!i122 204
+R20
+VjiETmU088jIaQmhNf4cOS0
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+vTestBench
+R7
+R7
+R18
+R19
+DXx4 work 15 FIFO_tb_sv_unit 0 22 AEjP4_IBI_>MkhRHhed^40
+R8
+R10
+r1
+!s85 0
+!i10b 1
+!s100 b^NEMLbaY5QR0Z@zKg1eC0
+Iz@j39hQeOh4g=]gLKmD4[0
+!s105 FIFO_tb_sv_unit
+S1
+R9
+R30
+R31
+R32
+!i122 204
+L0 4 32
+R11
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
+n@test@bench
+vtop
+R7
+R8
+!i10b 1
+!s100 gKU3YLMZj8Y8:4Re[HF^G3
+I_>OzQg@T0A90fO;mELN=U3
+S1
+R9
+w1746391394
+8top.sv
+Ftop.sv
+!i122 204
+L0 1 21
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R17
+R5
