@@ -26,7 +26,7 @@ module TestBench(FIFO_IF.TEST fifo_if);
             ->finished_driving;
             @(negedge fifo_if.clk);
         end
-        
+
     //================Assert test_finished================
         test_finished = 1;
         ->finished_driving;

@@ -47,8 +47,11 @@ always @(posedge fifo_if.clk or negedge fifo_if.rst_n) begin
 		fifo_if.underflow <= 0;
 		rd_ptr <= rd_ptr + 1;   //**
 	end
-	else if (fifo_if.rd_en && fifo_if.empty == 1) begin   // underflow is sequential, should be assigned in always block
-		fifo_if.underflow <= 1; 
+	else begin
+		if (fifo_if.rd_en && fifo_if.empty == 1) // underflow is sequential, should be assigned in always block
+			fifo_if.underflow <= 1; 
+		else 
+			fifo_if.underflow <= 0;
 	end
 end
 
