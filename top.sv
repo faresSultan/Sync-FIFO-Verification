@@ -15,7 +15,7 @@ module top();
                 !(fifo_if.wr_ack || fifo_if.underflow || fifo_if.overflow || fifo_if.almostempty||
                     fifo_if.almostfull || fifo_if.full) && fifo_if.empty
             )
-            else $fatal("Assertion Reset failed!");
+            else $error("Assertion Reset failed!");
         end
     end
 endmodule
