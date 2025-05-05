@@ -1,7 +1,7 @@
 package FIFO_test_pkg;
 
     import uvm_pkg::*;
-    import FIFO_env_pkg::*;
+    import fifo_env_pkg::*;
     import config_obj_pkg::*;
     import FIFO_sequence_pkg::*;
     `include "uvm_macros.svh"
