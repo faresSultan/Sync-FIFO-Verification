@@ -2,10 +2,7 @@ package FIFO_coverage_pkg;
     import FIFO_transaction_pkg::*;
 
     class FIFO_coverage;
-
         FIFO_transaction F_cvg_txn;
-
-
         covergroup FIFO_coverage;
 
         write_enable : coverpoint F_cvg_txn.wr_en iff(F_cvg_txn.rst_n){
@@ -45,34 +42,36 @@ package FIFO_coverage_pkg;
             bins wr_ack_1 = {1};
         }
             
-            cross write_enable , read_enable , full_flag{
-                illegal_bins full_1_rd_en1 = binsof(read_enable.rd_en_1) &&
-                binsof (full_flag.full_1);
-            }  
-            cross write_enable , read_enable , almostfull_flag;  
-            
-            cross write_enable , read_enable , empty_flag{
-                illegal_bins empty_1_wr_en1 = binsof(write_enable.wr_en_1) &&
-                binsof (empty_flag.empty_1);
-            }  
-            cross write_enable , read_enable , almostempty_flag;  
- 
-            cross write_enable , read_enable , overflow_flag{
-                illegal_bins overflow1_wr_en0 = binsof(write_enable.wr_en_0) &&
-                 binsof(overflow_flag.overflow_1);
-            }  
-            cross write_enable , read_enable , underflow_flag{
-                illegal_bins underflow1_wr_en0 = binsof(read_enable.rd_en_0) &&
-                 binsof(underflow_flag.underflow_1);
-            }
+        cross write_enable , read_enable , full_flag{
+            illegal_bins full_1_rd_en1 = binsof(read_enable.rd_en_1) &&
+            binsof (full_flag.full_1);
+        }  // when rd_en is high, one element should be removed from the FIFO, so won't be full
+        
+        cross write_enable , read_enable , almostfull_flag;  
+        
+        cross write_enable , read_enable , empty_flag{
+            illegal_bins empty_1_wr_en1 = binsof(write_enable.wr_en_1) &&
+            binsof (empty_flag.empty_1);
+        }  // when wr_en is high, one element should be Stored in the FIFO, so won't be Empty
 
-            cross write_enable , read_enable , write_ack_flag{
-                illegal_bins write_ack_wr_en0 = binsof(write_enable.wr_en_0) &&
-                binsof (write_ack_flag.wr_ack_1);
-            } 
+        cross write_enable , read_enable , almostempty_flag;  
 
+        cross write_enable , read_enable , overflow_flag{
+            illegal_bins overflow1_wr_en0 = binsof(write_enable.wr_en_0) &&
+             binsof(overflow_flag.overflow_1);
+        } // overflow only happens if there is a write operation, so if there is no write operation overflow can't go high
 
-        endgroup
+        cross write_enable , read_enable , underflow_flag{
+            illegal_bins underflow1_wr_en0 = binsof(read_enable.rd_en_0) &&
+             binsof(underflow_flag.underflow_1);
+        } // underflow only happens if there is a read operation, so if there is no read operation underflow can't go high
+
+        cross write_enable , read_enable , write_ack_flag{
+            illegal_bins write_ack_wr_en0 = binsof(write_enable.wr_en_0) &&
+            binsof (write_ack_flag.wr_ack_1);
+        } // write_ack only happens if there is a write operation, so if there is no write operation wr_ack can't go high
+
+    endgroup
 
         function new();
             FIFO_coverage = new;

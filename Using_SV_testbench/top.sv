@@ -8,12 +8,10 @@ module top();
     TestBench tb (fifo_if);
     FIFO_monitor monitor (fifo_if);
 
-    always_comb begin
-        
+    always_comb begin     
         if(!fifo_if.rst_n) begin 
             Reset: assert final (
-                !(fifo_if.wr_ack || fifo_if.underflow || fifo_if.overflow || fifo_if.almostempty||
-                    fifo_if.almostfull || fifo_if.full) && fifo_if.empty
+                (DUT.count =='b0 && DUT.wr_ptr =='b0 && DUT.rd_ptr == 'b0)
             )
             else $error("Assertion Reset failed!");
         end

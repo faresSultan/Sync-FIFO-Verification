@@ -13,11 +13,11 @@ localparam max_fifo_addr = $clog2(fifo_if.FIFO_DEPTH);
 reg [fifo_if.FIFO_WIDTH-1:0] mem [fifo_if.FIFO_DEPTH-1:0];
 
 reg [max_fifo_addr-1:0] wr_ptr, rd_ptr;
-reg [max_fifo_addr:0] count;  //**
+reg [max_fifo_addr:0] count;  
 
 always @(posedge fifo_if.clk or negedge fifo_if.rst_n) begin
 	if (!fifo_if.rst_n) begin 
-		wr_ptr <= 0;
+		wr_ptr <= 'b0;
 		fifo_if.wr_ack <= 0;
 		fifo_if.overflow <= 0;
 	end
@@ -39,7 +39,7 @@ end
 
 always @(posedge fifo_if.clk or negedge fifo_if.rst_n) begin
 	if (!fifo_if.rst_n) begin
-		rd_ptr <= 0;
+		rd_ptr <= 'b0;
 		fifo_if.underflow <= 0;
 	end
 	else if (fifo_if.rd_en && count != 0) begin
@@ -48,7 +48,7 @@ always @(posedge fifo_if.clk or negedge fifo_if.rst_n) begin
 		rd_ptr <= rd_ptr + 1;   //**
 	end
 	else begin
-		if (fifo_if.rd_en && fifo_if.empty == 1) // underflow is sequential, should be assigned in always block
+		if (fifo_if.rd_en && fifo_if.empty) // underflow is sequential, should be assigned in always block
 			fifo_if.underflow <= 1; 
 		else 
 			fifo_if.underflow <= 0;
@@ -57,23 +57,25 @@ end
 
 always @(posedge fifo_if.clk or negedge fifo_if.rst_n) begin
 	if (!fifo_if.rst_n) begin
-		count <= 0;
+		count <= 'b0;
 	end
 	else begin
 		if	( ({fifo_if.wr_en, fifo_if.rd_en} == 2'b10) && !fifo_if.full) 
 			count <= count + 1;
 		else if ( ({fifo_if.wr_en, fifo_if.rd_en} == 2'b01) && !fifo_if.empty)
 			count <= count - 1;
-		else if (({fifo_if.wr_en, fifo_if.rd_en} == 2'b11) && !fifo_if.full && fifo_if.empty)  // was missing
+		else if (({fifo_if.wr_en, fifo_if.rd_en} == 2'b11) && fifo_if.empty)  // was missing
 			count <= count + 1;
-		else if ( ({fifo_if.wr_en, fifo_if.rd_en} == 2'b11) && !fifo_if.empty && fifo_if.full) // was missing
+		else if ( ({fifo_if.wr_en, fifo_if.rd_en} == 2'b11)  && fifo_if.full) // was missing
 			count <= count - 1;
 	end
 end
 
 assign fifo_if.full = (count === fifo_if.FIFO_DEPTH)? 1 : 0;
 assign fifo_if.empty = (count === 0)? 1 : 0;
+
 assign fifo_if.almostfull = (count === fifo_if.FIFO_DEPTH-1)? 1 : 0; // was FIFO_DEPTH-2
+
 assign fifo_if.almostempty = (count === 1)? 1 : 0;
 //assign fifo_if.underflow = (fifo_if.empty && fifo_if.rd_en)? 1 : 0; //**
 
@@ -133,7 +135,6 @@ assign fifo_if.almostempty = (count === 1)? 1 : 0;
 		@(posedge fifo_if.clk) max_rd_ptr_valid_read |=> reset_rd_ptr; 
 	endproperty
 
-
 	property Write_Pointer_threshold;
 		@(posedge fifo_if.clk) (wr_ptr < fifo_if.FIFO_DEPTH);
 	endproperty
@@ -146,8 +147,8 @@ assign fifo_if.almostempty = (count === 1)? 1 : 0;
 		@(posedge fifo_if.clk) (count <= fifo_if.FIFO_DEPTH);
 	endproperty
 	
-	default disable iff (!fifo_if.rst_n);
 
+	default disable iff (!fifo_if.rst_n);
 
 	empty_Flag_Assertion: assert property (Empty_Flag_Assertion)
 		else $fatal("Assertion Empty_Flag_Assertion failed!");
@@ -196,9 +197,6 @@ assign fifo_if.almostempty = (count === 1)? 1 : 0;
 	counter_threshold: assert property (Counter_threshold)
 		else $fatal("Assertion Counter_threshold failed!");
 	cover property (Counter_threshold);
-
-
-
 `endif
 
 endmodule
