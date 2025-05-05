@@ -12,7 +12,7 @@ package FIFO_test_pkg;
         fifo_env env;
         fifo_config fifo_config_obj_test;
 
-        //===========sequences================
+        //define sequences handles here
 
         function new(string name = "fifo_test", uvm_component parent = null);
             super.new(name,parent);
@@ -23,7 +23,7 @@ package FIFO_test_pkg;
 
             fifo_config_obj_test = fifo_config::type_id::create("fifo_config_obj_test");
 
-            if(!uvm_config_db#(virtual FIFO_IF)::get(this,"","FIFO_IF",fifo_config_obj_test))
+            if(!uvm_config_db#(virtual FIFO_IF)::get(this,"","FIFO_IF",fifo_config_obj_test.fifo_config_if))
                 `uvm_fatal("build_phase","Test - unable to get the virtual interface")
             uvm_config_db#(fifo_config)::set(this,*,"CFG",fifo_config_obj_test);
 
