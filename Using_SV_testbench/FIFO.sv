@@ -73,14 +73,15 @@ end
 
 assign fifo_if.full = (count === fifo_if.FIFO_DEPTH)? 1 : 0;
 assign fifo_if.empty = (count === 0)? 1 : 0;
+
 assign fifo_if.almostfull = (count === fifo_if.FIFO_DEPTH-1)? 1 : 0; // was FIFO_DEPTH-2
+
 assign fifo_if.almostempty = (count === 1)? 1 : 0;
 //assign fifo_if.underflow = (fifo_if.empty && fifo_if.rd_en)? 1 : 0; //**
 
 
 //===================== Assertions to check flags functionalities ===========================
 `ifdef SIM
-
 
 	sequence max_wr_ptr_valid_write;
 		 fifo_if.wr_en && !fifo_if.full && (wr_ptr == {max_fifo_addr{1'b1}});
@@ -134,7 +135,6 @@ assign fifo_if.almostempty = (count === 1)? 1 : 0;
 		@(posedge fifo_if.clk) max_rd_ptr_valid_read |=> reset_rd_ptr; 
 	endproperty
 
-
 	property Write_Pointer_threshold;
 		@(posedge fifo_if.clk) (wr_ptr < fifo_if.FIFO_DEPTH);
 	endproperty
@@ -147,8 +147,8 @@ assign fifo_if.almostempty = (count === 1)? 1 : 0;
 		@(posedge fifo_if.clk) (count <= fifo_if.FIFO_DEPTH);
 	endproperty
 	
-	default disable iff (!fifo_if.rst_n);
 
+	default disable iff (!fifo_if.rst_n);
 
 	empty_Flag_Assertion: assert property (Empty_Flag_Assertion)
 		else $fatal("Assertion Empty_Flag_Assertion failed!");
@@ -197,9 +197,6 @@ assign fifo_if.almostempty = (count === 1)? 1 : 0;
 	counter_threshold: assert property (Counter_threshold)
 		else $fatal("Assertion Counter_threshold failed!");
 	cover property (Counter_threshold);
-
-
-
 `endif
 
 endmodule
