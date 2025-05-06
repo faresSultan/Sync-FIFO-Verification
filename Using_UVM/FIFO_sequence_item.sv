@@ -8,7 +8,6 @@ package fifo_seq_item_pkg;
     class fifo_seq_item extends uvm_sequence_item;
         `uvm_object_utils(fifo_seq_item)
 
-        parameter RD_EN_ON_DIST = 30 , WR_EN_ON_DIST = 70 ;
         rand bit [FIFO_WIDTH-1:0] data_in;
         rand bit rst_n, wr_en, rd_en;
         bit [FIFO_WIDTH-1:0] new_data_in;
@@ -16,6 +15,7 @@ package fifo_seq_item_pkg;
         logic [FIFO_WIDTH-1:0] data_out;
         logic wr_ack, overflow;
         logic full, empty, almostfull, almostempty, underflow;
+        int RD_EN_ON_DIST, WR_EN_ON_DIST;
 
         function new(string name = "fifo_seq_item");
             super.new(name);

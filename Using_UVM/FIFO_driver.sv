@@ -6,7 +6,7 @@ package fifo_driver_pkg;
     class fifo_driver extends uvm_driver #(fifo_seq_item);
         `uvm_component_utils(fifo_driver)
 
-        virtual fifo_if fifo_driver_vif;
+        virtual FIFO_IF fifo_driver_vif;
         fifo_seq_item stim_seq_item;
 
         function new(string name = "fifo_driver",uvm_component parent = null);

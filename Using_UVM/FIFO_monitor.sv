@@ -5,7 +5,7 @@ package fifo_monitor_pkg;
 
     class fifo_monitor extends uvm_monitor;
         `uvm_component_utils(fifo_monitor)
-        virtual fifo_if fifo_monitor_vif;
+        virtual FIFO_IF fifo_monitor_vif;
         fifo_seq_item rsp_seq_item;
         uvm_analysis_port #(fifo_seq_item) mon_a_port;
 

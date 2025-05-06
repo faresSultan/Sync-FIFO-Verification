@@ -106,7 +106,7 @@ package fifo_coverage_collector_pkg;
 
             forever begin
                 cov_fifo.get(cov_seq_item);
-                CovCode.sample();
+                FIFO_coverage.sample();
             end           
         endtask
 

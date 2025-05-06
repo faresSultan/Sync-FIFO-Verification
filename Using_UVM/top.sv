@@ -11,6 +11,8 @@ module top();
     FIFO_IF fifo_if (clk);
     FIFO DUT (fifo_if);
 
+    bind FIFO FIFO_SVA fifoSVA(fifo_if);
+
     initial begin
         uvm_config_db#(virtual FIFO_IF)::set(null,"uvm_test_top","FIFO_IF",fifo_if);
         run_test("fifo_test");
