@@ -46,7 +46,6 @@ package fifo_scoreboard_pkg;
                 if(!F_txn.empty && (data_out_ref != F_txn.data_out)) begin
                     `uvm_fatal("Golden model",$sformatf("Invalid data_out: %0h, Expected: %0h",F_txn.data_out,data_out_ref))
                     error_count++;
-                    //$stop;
                 end
                 else begin
                     correct_count++;
@@ -54,6 +53,7 @@ package fifo_scoreboard_pkg;
             end
             else correct_count++;    
         endfunction
+
         function void reference_model(fifo_seq_item F_txn);
             if(!F_txn.rst_n) begin
                 FIFO_ref.delete();          
@@ -85,7 +85,6 @@ package fifo_scoreboard_pkg;
                         FIFO_ref.push_back(F_txn.data_in);
                     end
                 end
-               
             end
         endfunction
 

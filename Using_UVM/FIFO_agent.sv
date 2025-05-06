@@ -20,12 +20,11 @@ package fifo_agent_pkg;
         function new(string name = "fifo_agent", uvm_component parent = null);
             super.new(name,parent);
         endfunction
-
+        
         function void build_phase(uvm_phase phase);
             super.build_phase(phase);
             if(!uvm_config_db #(fifo_config)::get(this,"","CFG",fifo_config_obj))
-                `uvm_fatal("build_phase","Agent - unable to get the virtual interface")
-            
+                `uvm_fatal("build_phase","Agent - unable to get the virtual interface")     
             sqr = fifo_sequencer::type_id::create("sqr",this);
             driver = fifo_driver::type_id::create("driver",this);
             mon = fifo_monitor::type_id::create("mon",this);

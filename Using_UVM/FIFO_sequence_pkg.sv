@@ -19,8 +19,6 @@ package fifo_sequence_pkg;
             start_item(seq_item);
                 seq_item.wr_en = 1;
                 seq_item.data_in = 'b11;
-                seq_item.rst_n = 1;
-                #0;
                 seq_item.rst_n = 0;
             finish_item(seq_item);
         endtask

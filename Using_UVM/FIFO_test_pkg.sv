@@ -5,7 +5,6 @@ package FIFO_test_pkg;
     import config_obj_pkg::*;
     import fifo_sequence_pkg::*;
     `include "uvm_macros.svh"
-
     class fifo_test extends uvm_test;
         `uvm_component_utils(fifo_test)
 
